@@ -6,7 +6,7 @@
   "description": "Rummy 500 con salas privadas, sin cuentas ni base de datos",
   "scripts": {
     "dev": "concurrently -k \"node --watch server/index.js\" \"vite --host 0.0.0.0\"",
-    "build": "tsc -b && vite build",
+    "build": "npm install --include=dev --no-audit --no-fund && tsc -b && vite build",
     "start": "node server/index.js",
     "test": "node --test tests/*.test.js"
   },
@@ -26,5 +26,7 @@
     "typescript": "^5.8.3",
     "vite": "^6.3.3"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }
